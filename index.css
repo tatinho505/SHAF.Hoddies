@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+:root {
+  /* Paleta de la imagen: Amarillo, Gris Claro, Azul Oscuro/Negro */
+  --accent: #fcf80d; /* Amarillo Brillante */
+  --bg: #e6e6e6; /* Gris muy claro/Blanco sucio (fondo principal) */
+  --dark-text: #1a1a2e; /* Azul/Negro muy oscuro */
+  --border: #aaaaaa; /* Borde gris para los botones */
+  --muted: #666;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--dark-text);
+  padding: 0;
+}
+
+/* -------------------------------------- */
+/* ESTILOS DEL ENCABEZADO */
+/* -------------------------------------- */
+
+.shiel-header {
+  background: var(--accent);
+  padding: 0.5rem 0;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0 1.5rem;
+  color: var(--dark-text);
+  font-size: 1.5rem;
+}
+
+.logo-icon {
+  margin-right: 16px;
+}
+
+.main-logo {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+/* Estilos de búsqueda en el encabezado */
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.search-container input {
+  font-family: system-ui;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  width: 60%;
+}
+
+.search-container button {
+  background: var(--dark-text);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+}
+
+/* -------------------------------------- */
+/* ESTILOS DE LA SECCIÓN DE MARCAS Y CTA */
+/* -------------------------------------- */
+
+.brand-filters {
+  text-align: center; /* Centrar contenido */
+  margin: 2rem 0; /* Espaciado superior e inferior */
+}
+
+.cta-banner {
+  background: var(--accent);
+  max-width: 90%;
+  margin: 0 auto 2rem auto;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-banner p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--dark-text);
+  text-align: center;
+  margin: 0;
+}
+
+.brand-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.brand-btn {
+  font-family: 'Roboto Mono', monospace;
+  background: #fff;
+  color: var(--dark-text);
+  border: 2px solid var(--dark-text);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 0 var(--dark-text);
+  transition: transform 0.1s;
+}
+
+.brand-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 0 var(--dark-text);
+}
+
+/* -------------------------------------- */
+/* ESTILOS DEL CATÁLOGO */
+/* -------------------------------------- */
+
+.catalog-container {
+  padding: 0 1.5rem 2rem 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Estilo de las tarjetas de producto */
+.card {
+  background: #fff;
+  border: 2px solid var(--dark-text);
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 4px 4px 0 0 var(--dark-text);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 0 var(--dark-text);
+}
+
+.card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--dark-text);
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Estilos de la lista de descripción (<dl>) */
+dl {
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--border);
+}
+
+dt {
+  cursor: pointer;
+  background: #fff;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  margin-top: 0.4rem;
+  border: 1px solid var(--border);
+  transition: background 0.2s;
+  font-weight: 600;
+}
+
+dt:hover {
+  background: #f0f0f0;
+}
+
+dd {
+  margin: 0.4rem 0 0.6rem 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--accent);
+  border-left: 3px solid var(--dark-text);
+  border-radius: 6px;
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botón "Copiar todas las especificaciones" */
+.copy-all {
+  font-family: 'Roboto Mono', monospace;
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.7rem;
+  background: var(--dark-text);
+  color: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.copy-all:hover {
+  background: #333;
+}
+
+/* -------------------------------------- */
+/* ESTILOS DEL CARRUSEL */
+/* -------------------------------------- */
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Ajusta el ancho máximo si lo deseas */
+    margin: 30px auto;
+    height: 520px; /* Ajusta la altura según tus imágenes */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.carousel-images {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen cubra todo el carrusel */
+    opacity: 0;
+    transition: opacity 0.7s ease; /* Transición suave */
+    z-index: 1;
+}
+
+.carousel-img.active {
+    opacity: 1;
+    z-index: 2;
+    position: absolute;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 50%;
+    z-index: 3;
+    transition: background 0.2s;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background: #eee;
+}

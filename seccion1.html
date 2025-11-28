@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bordados — SHAF</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Centrado y grid responsivo (igual que seccion2) */
+        .articles-container{
+            display:flex;
+            flex-wrap:wrap;
+            gap:16px;
+            padding:12px;
+            max-width:1100px;
+            margin:0 auto;
+            justify-content:center;
+            box-sizing:border-box;
+        }
+        .article{
+            width:300px;
+            box-shadow:0 2px 6px rgba(0,0,0,.08);
+            padding:12px;
+            border-radius:8px;
+            background:#fff;
+            display:flex;
+            flex-direction:column;
+            gap:8px;
+        }
+        .product-img{width:100%;height:160px;object-fit:cover;border-radius:6px;background:#f2f2f2}
+        .img-input{margin-top:8px;width:100%}
+        @media (max-width:980px){.article{width:45%}}
+        @media (max-width:480px){.article{width:100%}}
+
+        /* Estilos para el título del catálogo */
+        .catalog-title{
+            text-align: center;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin: 18px 0 6px;
+            color: #111;
+        }
+        .catalog-subtitle{
+            text-align: center;
+            font-family: inherit;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        /* Footer styles */
+        .site-footer{background:#111;color:#f5f5f5;padding:28px 16px;font-family:inherit}
+        .site-footer .container{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:16px;align-items:center}
+        .social-links{display:flex;gap:12px}
+        .social-link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#222;color:#fff;text-decoration:none;font-size:20px}
+        .social-link:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(0,0,0,.4)}
+        .payments{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+        .payment-badge{background:#fff;color:#111;padding:6px 10px;border-radius:6px;font-weight:700;font-size:14px}
+        .footer-note{font-size:13px;color:#cfcfcf;margin-top:6px}
+        @media (min-width:640px){.site-footer .container{flex-direction:row;justify-content:space-between;padding:0 12px}}
+    </style>
+</head>
+<body>
+<header class="shiel-header">
+    <div class="top-bar" style="display: flex; align-items: center; justify-content: space-between;">
+        <span class="logo-icon" style="margin-right: 16px;">🌼</span>
+        <h1 class="main-logo" style="flex: 1; text-align: center; margin: 0;">
+            <a href="principal.html" aria-label="Ir al inicio" style="color:inherit; text-decoration:none; display:inline-block; width:100%;">SHAF</a>
+        </h1>
+        <span style="display: flex; gap: 10px;">
+            <a href="favoritos.html" class="heart-link" aria-label="Ir a Favoritos" title="Favoritos" style="text-decoration:none;color:inherit;">
+                <span class="heart-icon">❤️</span>
+            </a>
+            <span class="cart-icon">🛒</span>
+        </span>
+    </div>
+    <section class="search-container">
+        <input id="search" type="search" placeholder="Buscar producto o característica...">
+        <button id="reset">Limpiar Búsqueda</button>
+    </section>
+</header>
+
+<main>
+    <section>
+        <h2 class="catalog-title">Catálogo de Bordados</h2>
+        <p class="catalog-subtitle"></p>
+
+        <!-- Recuadros para 6 artículos -->
+        <div class="articles-container" aria-label="Catálogo de bordados">
+            <article class="article" aria-labelledby="b1">
+                <div class="img-wrap">
+                    <img id="preview-b1" class="product-img" src="1bor.png" alt="Producto Bordado 1">
+                </div>
+                <h3 id="b1">Hoddie con bordado</h3>
+                <p class="price">$500.00</p>
+                <!-- botón "Ver" eliminado -->
+            </article>
+
+            <article class="article" aria-labelledby="b2">
+                <div class="img-wrap">
+                    <img id="preview-b2" class="product-img" src="2bor.png" alt="Producto Bordado 2">
+                </div>
+                <h3 id="b2">Producto Bordado 2</h3>
+                <p class="price">$500.00</p>
+            </article>
+
+            <article class="article" aria-labelledby="b3">
+                <div class="img-wrap">
+                    <img id="preview-b3" class="product-img" src="3bor.png" alt="Producto Bordado 3">
+                </div>
+                <h3 id="b3">Producto Bordado 3</h3>
+                <p class="price">$600.00</p>
+            </article>
+
+            <article class="article" aria-labelledby="b4">
+                <div class="img-wrap">
+                    <img id="preview-b4" class="product-img" src="4bor.png" alt="Producto Bordado 4">
+                </div>
+                <h3 id="b4">Producto Bordado 4</h3>
+                <p class="price">$500.00</p>
+            </article>
+
+            <article class="article" aria-labelledby="b5">
+                <div class="img-wrap">
+                    <img id="preview-b5" class="product-img" src="5bor.png" alt="Producto Bordado 5">
+                </div>
+                <h3 id="b5">Producto Bordado 5</h3>
+                <p class="price">$600.00</p>
+            </article>
+
+            <article class="article" aria-labelledby="b6">
+                <div class="img-wrap">
+                    <img id="preview-b6" class="product-img" src="6bor.png" alt="Producto Bordado 6">
+                </div>
+                <h3 id="b6">Producto Bordado 6</h3>
+                <p class="price">$600.00</p>
+            </article>
+        </div> <!-- end .articles-container -->
+
+        <!-- Botón para ir a Estampados (formato como el de las secciones; solo agregué el botón) -->
+        <div style="display:flex;justify-content:center;margin:18px 0 26px;">
+            <a href="seccion2.html" class="nav-btn" style="display:inline-block;background:#111;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700" aria-label="Ir a Estampados">Ir a Estampados →</a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="social-area">
+            <div style="font-weight:700;margin-bottom:6px;text-align:center">Síguenos</div>
+            <div class="social-links" role="navigation" aria-label="Redes sociales">
+                <a class="social-link" href="#" aria-label="Instagram" title="Instagram">📸</a>
+                <a class="social-link" href="#" aria-label="WhatsApp" title="WhatsApp">💬</a>
+                <a class="social-link" href="#" aria-label="Facebook" title="Facebook">👍</a>
+                <a class="social-link" href="#" aria-label="Messenger" title="Messenger">✉️</a>
+            </div>
+        </div>
+
+        <div class="payments-area">
+            <div style="font-weight:700;margin-bottom:6px;text-align:center">Métodos de pago</div>
+            <div class="payments" aria-label="Métodos de pago aceptados">
+                <span class="payment-badge">VISA</span>
+                <span class="payment-badge">Mastercard</span>
+                <span class="payment-badge">PayPal</span>
+                <span class="payment-badge">Transferencia</span>
+            </div>
+        </div>
+
+        <div class="footer-note" style="margin-top:8px">&copy; <span id="year"></span> SHAF. Todos los derechos reservados.</div>
+    </div>
+
+    <script>
+        (function(){
+            var y = new Date().getFullYear();
+            var el = document.getElementById('year');
+            if(el) el.textContent = y;
+        })();
+    </script>
+</footer>
+
+<script src="seccion.js"></script>
+</body>
+</html>

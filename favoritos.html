@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Favoritos — SHAF</title>
+
+    <!-- estilos globales y específicos -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="favoritos.css">
+</head>
+<body>
+<header class="shiel-header">
+    <div class="top-bar">
+        <span class="logo-icon">🌼</span>
+        <h1 class="main-logo">
+            <a href="principal.html" aria-label="Ir al inicio" style="color:inherit;text-decoration:none;display:inline-block;width:100%;">SHAF</a>
+        </h1>
+        <span style="display:flex;gap:10px;align-items:center">
+            <a href="favoritos.html" class="heart-link" aria-label="Ir a Favoritos" title="Favoritos" style="text-decoration:none;color:inherit;">
+                <span class="heart-icon">❤️</span>
+            </a>
+            <a href="carrito.html" class="cart-link" aria-label="Ir al carrito" title="Carrito" style="text-decoration:none;color:inherit;">
+                <span class="cart-icon">🛒</span>
+            </a>
+        </span>
+    </div>
+    <section class="search-container">
+        <input id="search" type="search" placeholder="Buscar producto o característica...">
+        <button id="reset">Limpiar Búsqueda</button>
+    </section>
+</header>
+
+<main>
+    <section class="page-container">
+        <div class="empty-state">
+            No se encontraron productos
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="social-area">
+            <div style="font-weight:700;margin-bottom:6px;text-align:center">Síguenos</div>
+            <div class="social-links" role="navigation" aria-label="Redes sociales">
+                <a class="social-link" href="#" aria-label="Instagram" title="Instagram">📸</a>
+                <a class="social-link" href="#" aria-label="WhatsApp" title="WhatsApp">💬</a>
+                <a class="social-link" href="#" aria-label="Facebook" title="Facebook">👍</a>
+                <a class="social-link" href="#" aria-label="Messenger" title="Messenger">✉️</a>
+            </div>
+        </div>
+
+        <div class="payments-area">
+            <div style="font-weight:700;margin-bottom:6px;text-align:center">Métodos de pago</div>
+            <div class="payments" aria-label="Métodos de pago aceptados">
+                <span class="payment-badge">VISA</span>
+                <span class="payment-badge">Mastercard</span>
+                <span class="payment-badge">PayPal</span>
+                <span class="payment-badge">Transferencia</span>
+            </div>
+        </div>
+
+        <div class="footer-note" style="margin-top:8px">&copy; <span id="year"></span> SHAF. Todos los derechos reservados.</div>
+    </div>
+
+    <script>
+        (function(){
+            var y = new Date().getFullYear();
+            var el = document.getElementById('year');
+            if(el) el.textContent = y;
+        })();
+    </script>
+</footer>
+</body>
+</html>

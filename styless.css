@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, white, gray);
+}
+
+header {
+    background-color: #fcf80d;
+    text-align: center;
+    padding: 20px;
+}
+
+/* estilos originales de artículos */
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centrar los elementos en la línea */
+    gap: 16px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto; /* centra el contenedor en la página */
+    box-sizing: border-box;
+}
+
+.article {
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    padding: 12px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    width: 320px;               /* ancho del recuadro en desktop */
+    min-height: 520px;           /* altura mínima mayor para todo el recuadro */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+    /* mantiene el layout existente pero centra el contenido textual */
+    text-align: center;
+}
+
+/* Títulos y precios en negrita */
+.article h3,
+.article .price {
+    font-weight: 700;
+}
+
+.article h3 {
+    text-align: center;   /* centra el nombre del producto dentro del recuadro */
+    margin: 8px 0 4px;
+    font-weight: 700;
+}
+
+/* Si por alguna razón quedan botones, se ocultan */
+.article button {
+    display: none;
+}
+
+/* Solución rápida: forzar aspecto 1:1 y cubrir el recuadro */
+.product-img,
+.article img {
+    width: 100%;
+    aspect-ratio: 1 / 1;      /* garantiza cuadrado */
+    object-fit: cover;        /* rellena y recorta si es necesario */
+    display: block;
+    border-radius: 6px;
+    background: #3d3d3d;
+}
+
+/* imágenes de producto clickeables (sin lupa fea) */
+.product-img {
+    cursor: pointer; /* indica que es clickable, sin usar zoom-in */
+}
+
+/* Contenedor cuadrado (fuerza 1:1) y mínimo alto para asegurar cuadrado en todas las resoluciones */
+.img-wrap {
+    width: 100%;
+    position: relative;
+    padding-bottom: 100%;        /* mantiene proporción 1:1 por defecto */
+    overflow: hidden;
+    border-radius: 6px;
+    background: #f2f2f2;
+    display: block;
+}
+.img-wrap img,
+.product-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;         /* muestra la imagen completa dentro del recuadro */
+    object-position: center;
+    display: block;
+    border-radius: 6px;
+    background: transparent;
+}
+
+.article h2, .article h3 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+/* Asegurar tamaño de recuadros en desktop para que sean más grandes */
+@media (min-width: 1100px) {
+    .article { width: 320px; } /* hace el recuadro más ancho, la imagen quedará ~320x320 */
+}
+
+/* responsive: adapta número de columnas según ancho */
+@media (max-width: 980px) {
+    .article { width: 45%; min-height: 420px; }
+    .img-wrap { min-height: 340px; }
+}
+@media (max-width: 600px) {
+    .article { width: 100%; }
+}
+@media (max-width: 480px) {
+    .article { width: 100%; min-height: 360px; }
+    .img-wrap { min-height: 300px; padding-bottom: 100%; }
+}
+
+/* Modal de vista previa de imagen */
+.img-modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+}
+.img-modal{
+    max-width: 92vw;
+    max-height: 92vh;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-modal img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 6px;
+}
+.img-modal-close{
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    font-weight:700;
+    cursor:pointer;
+    z-index:1300;
+}
+
+/* Vista previa simple sobre la página (overlay) */
+.img-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    outline: none;
+}
+.img-overlay-img {
+    max-width: 94%;
+    max-height: 94%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.img-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+/* la imagen es clickable pero sin el icono "lupa" */
+.product-img {
+    cursor: pointer;
+}
